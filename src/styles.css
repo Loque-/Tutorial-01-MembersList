@@ -1,0 +1,25 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+html {
+    background-color: #101113;
+}
+
+.App {
+    font-family: "Neue Haas Grotesk Display", "Destiny Symbols", "Segoe-MDL",
+        sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "NotoColorEmoji",
+        "Segoe UI Symbol", "Android Emoji", "EmojiSymbols";
+    text-align: center;
+    font-size: 14px;
+}
