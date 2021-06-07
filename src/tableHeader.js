@@ -23,13 +23,32 @@ const ColumnTitle = styled("div", {
     }
 });
 
-function TableHeaderComponent({ imgURL, name, joinDate }) {
+// React component
+function TableHeaderComponent({ sortFunction }) {
     // JSX
     return (
         <TableHeadRow>
-            <ColumnTitle>Image</ColumnTitle>
-            <ColumnTitle>Name</ColumnTitle>
-            <ColumnTitle>Join Date</ColumnTitle>
+            <ColumnTitle
+                onClick={() => {
+                    sortFunction("image");
+                }}
+            >
+                Image
+            </ColumnTitle>
+            <ColumnTitle
+                onClick={() => {
+                    sortFunction("name");
+                }}
+            >
+                Name
+            </ColumnTitle>
+            <ColumnTitle
+                onClick={() => {
+                    sortFunction("joinDate");
+                }}
+            >
+                Join Date
+            </ColumnTitle>
         </TableHeadRow>
     );
 }

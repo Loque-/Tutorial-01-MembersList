@@ -1,43 +1,62 @@
-import { members } from "./members";
+import React, { useState } from "react";
+import { styled } from "@stitches/react";
+import { members } from "./membersData";
 import TableHeader from "./tableHeader";
-import Member from "./member";
+import TableBody from "./tableBody";
+import { basicSort } from "./utils";
 
 import "./styles.css";
 
-// Render list of users from JS object
-// [x] Get data
-// [x] Render data
-// [x] Style data
-// [ ] Sortable columns
-// [ ] Link profiles to something
-// [ ] Border animation on hover
-// [ ] Get members list from bungie API
-// [ ] Folder setup and organisation
+const DEFAULT_SORT = "joinDate";
 
-function createMemberRow(member) {
-    // Find relevant bits of data
+const Table = styled("div", {});
+
+function filterData(member) {
     const name = member.destinyUserInfo.LastSeenDisplayName;
-    const joinDate = new Date(member.joinDate).toLocaleDateString();
-    const imgURL = `https://www.bungie.net/${member.bungieNetUserInfo.iconPath}`;
+    const joinDate = member.joinDate;
+    const image = `https://www.bungie.net/${member.bungieNetUserInfo.iconPath}`;
 
-    return (
-        <Member key={name} imgURL={imgURL} name={name} joinDate={joinDate} />
-    );
+    return {
+        name,
+        joinDate,
+        image
+    };
 }
 
-// createMemberRow(members[0])
+//
 
 export default function App() {
+    // Tidy data
+    const filteredData = members.map(filterData);
+
+    // Define default state
+    const [sortedData, setSortedData] = useState(
+        filteredData.sort(basicSort(DEFAULT_SORT))
+    );
+    const [sortName, setSortName] = useState(DEFAULT_SORT);
+    const [sortReverse, setSortReverse] = useState(false);
+
+    // Sort function
+    function sortData(on) {
+        let isReverse = false;
+
+        // If we are sorting on the same as the current sortName
+        if (on === sortName) {
+            isReverse = sortReverse ? false : true;
+        }
+
+        const updatedData = filteredData.sort(basicSort(on, isReverse));
+
+        // Update state
+        setSortedData(updatedData);
+        setSortName(on);
+        setSortReverse(isReverse);
+    }
+
     return (
-        <div className="App">
-            <TableHeader />
-            {
-                // for every member in members array
-                members.map(
-                    // Do this function
-                    createMemberRow
-                )
-            }
-        </div>
+        <Table>
+            <TableHeader sortFunction={sortData} />
+            <TableBody tableData={sortedData} />
+        </Table>
     );
 }
