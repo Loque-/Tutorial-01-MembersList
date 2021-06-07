@@ -17,16 +17,18 @@ I have created this repo so we can commit to it after each session to potentiall
 https://codesandbox.io/s/github/Loque-/Tutorial-01-MembersList/
 
 // Render list of users from JS object
-// [x] Get data
-// [x] Render data
-// [x] Style data
-// [x] Sortable columns
-// [ ] Link profiles to something
-// [ ] Border animation on hover
-// [ ] Get members list from bungie API
-// [ ] Folder setup and organisation
-// [ ] Add TF Logo & Header
-// [ ] Add HTML Meta data
+
+-   [x] Get data
+-   [x] Render data
+-   [x] Style data
+-   [x] Sortable columns
+-   [ ] Link profiles to something
+-   [ ] Border animation on hover
+-   [ ] Get members list from bungie API
+-   [ ] Folder setup and organisation
+-   [ ] Add TF Logo & Header
+-   [ ] Add HTML Meta data
 
 // For Peter
-// [ ] Add a Column
+
+-   [ ] Add a Column
