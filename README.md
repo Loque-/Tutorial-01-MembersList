@@ -32,3 +32,4 @@ https://codesandbox.io/s/github/Loque-/Tutorial-01-MembersList/
 // For Peter
 
 -   [ ] Add a Column
+-   [ ] Fix font CSS
