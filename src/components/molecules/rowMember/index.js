@@ -1,17 +1,16 @@
 import { styled } from "@stitches/react";
-import { tableSize } from "./styles";
+import { tableSize } from "styles";
 
 const Member = styled("div", {
-  color: "blue",
-  backgroundColor: "#101113",
   marginBottom: "1px",
   paddingBottom: "1px",
   borderBottom: "solid 1px rgba(255, 255, 255,.2)",
-  transition: "color .25s, background-color .25s, box-shadow .25s"
+  cursor: "default"
 });
 
 const Inner = styled("div", {
   ...tableSize,
+  transition: "color .25s, background-color .25s, box-shadow .25s",
   "&:hover": {
     backgroundColor: "rgba(255, 255, 255,.2)"
   }

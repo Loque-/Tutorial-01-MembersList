@@ -1,25 +1,118 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 img,
 picture {
-    max-width: 100%;
-    display: block;
+  max-width: 100%;
+  display: block;
 }
 
 html {
-    background-color: #101113;
+  color: hsla(0, 0%, 100%, 0.6);
+  background-color: #101113;
+  font-family: "Neue Haas Grotesk Display", "Destiny Symbols", "Segoe-MDL",
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "NotoColorEmoji",
+    "Segoe UI Symbol", "Android Emoji", "EmojiSymbols";
+  font-size: 14px;
 }
 
-.App {
-    font-family: "Neue Haas Grotesk Display", "Destiny Symbols", "Segoe-MDL",
-        sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "NotoColorEmoji",
-        "Segoe UI Symbol", "Android Emoji", "EmojiSymbols";
-    text-align: center;
-    font-size: 14px;
+@font-face {
+  font-family: "Destiny Symbols";
+  src: url(/static/media/DestinySymbols.bff6668a.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Display";
+  src: url(/static/media/NHaasGroteskDSPro-55Rg.6e2e7269.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Display";
+  src: url(/static/media/NHaasGroteskDSPro-56It.fae1b1d3.woff2) format("woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Display";
+  src: url(/static/media/NHaasGroteskDSPro-65Md.69badee0.woff2) format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Display";
+  src: url(/static/media/NHaasGroteskDSPro-66MdIt.7daf0d48.woff2)
+    format("woff2");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Display";
+  src: url(/static/media/NHaasGroteskDSPro-75Bd.b8fd2bf3.woff2) format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Display";
+  src: url(/static/media/NHaasGroteskDSPro-76BdIt.fb50c8ae.woff2)
+    format("woff2");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Text";
+  src: url(/static/media/NHaasGroteskTXPro-55Rg.3837fc53.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Text";
+  src: url(/static/media/NHaasGroteskTXPro-56It.cc9f0bb1.woff2) format("woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Text";
+  src: url(/static/media/NHaasGroteskTXPro-65Md.08a2cf77.woff2) format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Text";
+  src: url(/static/media/NHaasGroteskTXPro-66MdIt.a1e46289.woff2)
+    format("woff2");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Text";
+  src: url(/static/media/NHaasGroteskTXPro-75Bd.b992e36e.woff2) format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Text";
+  src: url(/static/media/NHaasGroteskTXPro-76BdIt.4e481988.woff2)
+    format("woff2");
+  font-weight: 700;
+  font-style: italic;
 }
