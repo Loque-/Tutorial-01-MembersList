@@ -6,7 +6,6 @@
  * Sourced from https://stackoverflow.com/a/979325
  */
 export function basicSort(field, reverse, primer) {
-    console.log("field", field);
     const key = primer
         ? function (x) {
               return primer(x[field]);
