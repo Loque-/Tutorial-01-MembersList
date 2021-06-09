@@ -13,12 +13,15 @@ function filterData(member) {
     const joinDate = member.joinDate;
     const image = `https://www.bungie.net/${member.bungieNetUserInfo.iconPath}`;
     const lastOnline = member.lastOnline;
+    const bungieId = member.bungieNetUserInfo.membershipId;
 
+    console.log(bungieId);
     return {
         name,
         joinDate,
         image,
-        lastOnline
+        lastOnline,
+        bungieId
     };
 }
 

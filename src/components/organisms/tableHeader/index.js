@@ -56,6 +56,7 @@ function TableHeaderComponent({ sortFunction }) {
             >
                 Last Online
             </ColumnTitle>
+            <ColumnTitle>Links</ColumnTitle>
         </TableHeadRow>
     );
 }

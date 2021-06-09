@@ -24,7 +24,7 @@ https://codesandbox.io/s/github/Loque-/Tutorial-01-MembersList/
 -   [x] Sortable columns
 -   [x] Folder setup and organisation
 -   [ ] Finish implementing fonts
--   [ ] Link profiles to something
+-   [x] Link profiles to something
 -   [ ] Border animation on hover
 -   [ ] Get members list from Bungie API
 -   [ ] Add TF Logo & Header
@@ -34,3 +34,4 @@ https://codesandbox.io/s/github/Loque-/Tutorial-01-MembersList/
 
 -   [x] Add an extra Column
 -   [x] Fix font CSS
+-
