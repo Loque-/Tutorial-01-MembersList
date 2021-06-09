@@ -6,6 +6,7 @@ function createMemberRow(member) {
     const joinDate = new Date(member.joinDate).toLocaleDateString();
     const imgURL = member.image;
     const lastOnline = new Date(member.lastOnline).toLocaleDateString();
+    const bungieId = member.bungieId;
 
     return (
         <MemberRow
@@ -14,6 +15,7 @@ function createMemberRow(member) {
             name={name}
             joinDate={joinDate}
             lastOnline={lastOnline}
+            bungieId={bungieId}
         />
     );
 }

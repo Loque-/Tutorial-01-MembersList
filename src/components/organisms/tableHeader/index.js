@@ -56,6 +56,13 @@ function TableHeaderComponent({ sortFunction }) {
             >
                 Last Online
             </ColumnTitle>
+            <ColumnTitle
+                onClick={() => {
+                    sortFunction("bungieId");
+                }}
+            >
+                Bungie Profile
+            </ColumnTitle>
         </TableHeadRow>
     );
 }
