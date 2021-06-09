@@ -25,20 +25,26 @@ const Name = styled("div", {
   alignItems: "center",
   padding: "0px 5px"
 });
-const Date = styled("div", {
+const JoinDate = styled("div", {
+  display: "flex",
+  alignItems: "center",
+  padding: "0px 5px"
+});
+const LastOnlineDate = styled("div", {
   display: "flex",
   alignItems: "center",
   padding: "0px 5px"
 });
 
-function MemberComponent({ imgURL, name, joinDate }) {
+function MemberComponent({ imgURL, name, joinDate, lastOnline }) {
   // JSX
   return (
     <Member>
       <Inner>
         <Image src={imgURL} alt="member" />
         <Name>{name}</Name>
-        <Date>{joinDate}</Date>
+        <JoinDate>{joinDate}</JoinDate>
+        <LastOnlineDate>{lastOnline}</LastOnlineDate>
       </Inner>
     </Member>
   );

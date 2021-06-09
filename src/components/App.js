@@ -9,51 +9,53 @@ import "styles.css";
 const DEFAULT_SORT = "joinDate";
 
 function filterData(member) {
-  const name = member.destinyUserInfo.LastSeenDisplayName;
-  const joinDate = member.joinDate;
-  const image = `https://www.bungie.net/${member.bungieNetUserInfo.iconPath}`;
+    const name = member.destinyUserInfo.LastSeenDisplayName;
+    const joinDate = member.joinDate;
+    const image = `https://www.bungie.net/${member.bungieNetUserInfo.iconPath}`;
+    const lastOnline = member.lastOnline;
 
-  return {
-    name,
-    joinDate,
-    image
-  };
+    return {
+        name,
+        joinDate,
+        image,
+        lastOnline
+    };
 }
 
 //
 
 export default function App() {
-  // Tidy data
-  const filteredData = members.map(filterData);
+    // Tidy data
+    const filteredData = members.map(filterData);
 
-  // Define default state
-  const [sortedData, setSortedData] = useState(
-    filteredData.sort(basicSort(DEFAULT_SORT))
-  );
-  const [sortName, setSortName] = useState(DEFAULT_SORT);
-  const [sortReverse, setSortReverse] = useState(false);
+    // Define default state
+    const [sortedData, setSortedData] = useState(
+        filteredData.sort(basicSort(DEFAULT_SORT))
+    );
+    const [sortName, setSortName] = useState(DEFAULT_SORT);
+    const [sortReverse, setSortReverse] = useState(false);
 
-  // Sort function
-  function sortData(on) {
-    let isReverse = false;
+    // Sort function
+    function sortData(on) {
+        let isReverse = false;
 
-    // If we are sorting on the same as the current sortName
-    if (on === sortName) {
-      isReverse = sortReverse ? false : true;
+        // If we are sorting on the same as the current sortName
+        if (on === sortName) {
+            isReverse = sortReverse ? false : true;
+        }
+
+        const updatedData = filteredData.sort(basicSort(on, isReverse));
+
+        // Update state
+        setSortedData(updatedData);
+        setSortName(on);
+        setSortReverse(isReverse);
     }
 
-    const updatedData = filteredData.sort(basicSort(on, isReverse));
-
-    // Update state
-    setSortedData(updatedData);
-    setSortName(on);
-    setSortReverse(isReverse);
-  }
-
-  return (
-    <>
-      <TableHeader sortFunction={sortData} />
-      <TableBody tableData={sortedData} />
-    </>
-  );
+    return (
+        <>
+            <TableHeader sortFunction={sortData} />
+            <TableBody tableData={sortedData} />
+        </>
+    );
 }
