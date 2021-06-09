@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { members } from "data/membersData";
 import TableHeader from "components/organisms/tableHeader";
 import TableBody from "components/organisms/tableBody";
 import { basicSort } from "utils";
@@ -15,7 +14,6 @@ function filterData(member) {
     const lastOnline = member.lastOnline;
     const bungieId = member.bungieNetUserInfo.membershipId;
 
-    console.log(bungieId);
     return {
         name,
         joinDate,
@@ -27,7 +25,7 @@ function filterData(member) {
 
 //
 
-export default function App() {
+export default function App({ members = [], memberCount = 0 }) {
     // Tidy data
     const filteredData = members.map(filterData);
 
@@ -57,7 +55,7 @@ export default function App() {
 
     return (
         <>
-            <TableHeader sortFunction={sortData} />
+            <TableHeader sortFunction={sortData} memberCount={memberCount} />
             <TableBody tableData={sortedData} />
         </>
     );

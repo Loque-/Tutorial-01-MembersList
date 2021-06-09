@@ -1,7 +1,6 @@
 import MemberRow from "components/molecules/rowMember";
 
 function createMemberRow(member) {
-    // Find relevant bits of data
     const name = member.name;
     const joinDate = new Date(member.joinDate).toLocaleDateString();
     const imgURL = member.image;
@@ -21,10 +20,7 @@ function createMemberRow(member) {
 }
 
 function TableBody({ tableData }) {
-    return tableData.map(
-        // Do this function
-        createMemberRow
-    );
+    return tableData.map(createMemberRow);
 }
 
 export default TableBody;

@@ -44,14 +44,13 @@ const Links = styled("div", {
     padding: "0px 5px"
 });
 
-const BungieIconLink = styled("a", {
+const BungieLink = styled("a", {
     display: "flex",
     width: "50px",
     padding: "10px"
 });
 
 function MemberComponent({ imgURL, name, joinDate, lastOnline, bungieId }) {
-    // JSX
     return (
         <Member>
             <Inner>
@@ -60,13 +59,13 @@ function MemberComponent({ imgURL, name, joinDate, lastOnline, bungieId }) {
                 <JoinDate>{joinDate}</JoinDate>
                 <LastOnlineDate>{lastOnline}</LastOnlineDate>
                 <Links>
-                    <BungieIconLink
+                    <BungieLink
                         target="_blank"
                         rel="noreferrer"
                         href={`${BUNGIE_PROFILE_URL}${bungieId}`}
                     >
                         <BungieIcon />
-                    </BungieIconLink>
+                    </BungieLink>
                 </Links>
             </Inner>
         </Member>

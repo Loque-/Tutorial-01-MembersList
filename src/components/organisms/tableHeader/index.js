@@ -23,9 +23,12 @@ const ColumnTitle = styled("div", {
     }
 });
 
-// React component
-function TableHeaderComponent({ sortFunction }) {
-    // JSX
+const MemberCount = styled("div", {
+    fontSize: "10px",
+    paddingLeft: "3px"
+});
+
+function TableHeaderComponent({ sortFunction, memberCount }) {
     return (
         <TableHeadRow>
             <ColumnTitle
@@ -40,7 +43,7 @@ function TableHeaderComponent({ sortFunction }) {
                     sortFunction("name");
                 }}
             >
-                Name
+                Members <MemberCount>({memberCount})</MemberCount>
             </ColumnTitle>
             <ColumnTitle
                 onClick={() => {
