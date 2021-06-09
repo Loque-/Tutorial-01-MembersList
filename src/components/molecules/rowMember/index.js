@@ -2,7 +2,7 @@ import { styled } from "@stitches/react";
 import { tableSize } from "styles";
 import BungieIcon from "components/atoms/icons/bungie";
 
-const BUNGIE_PROFILE_URL = "https://www.bungie.net/en/Profile/3/";
+const BUNGIE_PROFILE_URL = "https://www.bungie.net/en/Profile/";
 
 const Member = styled("div", {
     marginBottom: "1px",
@@ -50,19 +50,28 @@ const BungieLink = styled("a", {
     padding: "10px"
 });
 
-function MemberComponent({ imgURL, name, joinDate, lastOnline, bungieId }) {
+function MemberComponent({
+    imgURL,
+    name,
+    joinDate,
+    lastOnline,
+    bungieId,
+    bungieMemberType
+}) {
     return (
         <Member>
             <Inner>
                 <Image src={imgURL} alt="member" />
                 <Name>{name}</Name>
                 <JoinDate>{joinDate}</JoinDate>
-                <LastOnlineDate>{lastOnline}</LastOnlineDate>
+                <LastOnlineDate>
+                    {new Date(lastOnline).toLocaleString()}
+                </LastOnlineDate>
                 <Links>
                     <BungieLink
                         target="_blank"
                         rel="noreferrer"
-                        href={`${BUNGIE_PROFILE_URL}${bungieId}`}
+                        href={`${BUNGIE_PROFILE_URL}${bungieMemberType}/${bungieId}`}
                     >
                         <BungieIcon />
                     </BungieLink>

@@ -1,11 +1,13 @@
-import MemberRow from "components/molecules/rowMember";
+import MemberRow from "data/container/rowMember";
 
 function createMemberRow(member) {
     const name = member.name;
     const joinDate = new Date(member.joinDate).toLocaleDateString();
     const imgURL = member.image;
-    const lastOnline = new Date(member.lastOnline).toLocaleDateString();
     const bungieId = member.bungieId;
+    const bungieMemberType = member.bungieMemberType;
+    const destinyId = member.destinyId;
+    const destinyMemberType = member.destinyMemberType;
 
     return (
         <MemberRow
@@ -13,8 +15,10 @@ function createMemberRow(member) {
             imgURL={imgURL}
             name={name}
             joinDate={joinDate}
-            lastOnline={lastOnline}
             bungieId={bungieId}
+            bungieMemberType={bungieMemberType}
+            destinyId={destinyId}
+            destinyMemberType={destinyMemberType}
         />
     );
 }

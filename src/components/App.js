@@ -7,31 +7,12 @@ import "styles.css";
 
 const DEFAULT_SORT = "joinDate";
 
-function filterData(member) {
-    const name = member.destinyUserInfo.LastSeenDisplayName;
-    const joinDate = member.joinDate;
-    const image = `https://www.bungie.net/${member.bungieNetUserInfo.iconPath}`;
-    const lastOnline = member.lastOnline;
-    const bungieId = member.bungieNetUserInfo.membershipId;
-
-    return {
-        name,
-        joinDate,
-        image,
-        lastOnline,
-        bungieId
-    };
-}
-
 //
 
 export default function App({ members = [], memberCount = 0 }) {
-    // Tidy data
-    const filteredData = members.map(filterData);
-
     // Define default state
     const [sortedData, setSortedData] = useState(
-        filteredData.sort(basicSort(DEFAULT_SORT))
+        members.sort(basicSort(DEFAULT_SORT))
     );
     const [sortName, setSortName] = useState(DEFAULT_SORT);
     const [sortReverse, setSortReverse] = useState(false);
@@ -45,7 +26,7 @@ export default function App({ members = [], memberCount = 0 }) {
             isReverse = sortReverse ? false : true;
         }
 
-        const updatedData = filteredData.sort(basicSort(on, isReverse));
+        const updatedData = members.sort(basicSort(on, isReverse));
 
         // Update state
         setSortedData(updatedData);
