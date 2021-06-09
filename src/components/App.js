@@ -7,17 +7,14 @@ import "styles.css";
 
 const DEFAULT_SORT = "joinDate";
 
-//
-
-export default function App({ members = [], memberCount = 0 }) {
-    // Define default state
-    const [sortedData, setSortedData] = useState(
-        members.sort(basicSort(DEFAULT_SORT))
-    );
+function App({ members = [], memberCount = 0 }) {
     const [sortName, setSortName] = useState(DEFAULT_SORT);
     const [sortReverse, setSortReverse] = useState(false);
 
-    // Sort function
+    const [sortedData] = useState(
+        members.sort(basicSort(sortName, sortReverse))
+    );
+
     function sortData(on) {
         let isReverse = false;
 
@@ -26,10 +23,6 @@ export default function App({ members = [], memberCount = 0 }) {
             isReverse = sortReverse ? false : true;
         }
 
-        const updatedData = members.sort(basicSort(on, isReverse));
-
-        // Update state
-        setSortedData(updatedData);
         setSortName(on);
         setSortReverse(isReverse);
     }
@@ -41,3 +34,5 @@ export default function App({ members = [], memberCount = 0 }) {
         </>
     );
 }
+
+export default React.memo(App);

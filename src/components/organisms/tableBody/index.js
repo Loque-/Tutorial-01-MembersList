@@ -1,30 +1,7 @@
-import MemberRow from "data/container/rowMember";
-
-function createMemberRow(member) {
-    const name = member.name;
-    const joinDate = new Date(member.joinDate).toLocaleDateString();
-    const imgURL = member.image;
-    const bungieId = member.bungieId;
-    const bungieMemberType = member.bungieMemberType;
-    const destinyId = member.destinyId;
-    const destinyMemberType = member.destinyMemberType;
-
-    return (
-        <MemberRow
-            key={name}
-            imgURL={imgURL}
-            name={name}
-            joinDate={joinDate}
-            bungieId={bungieId}
-            bungieMemberType={bungieMemberType}
-            destinyId={destinyId}
-            destinyMemberType={destinyMemberType}
-        />
-    );
-}
+import MemberRow from "components/molecules/rowMember";
 
 function TableBody({ tableData }) {
-    return tableData.map(createMemberRow);
+    return tableData.map((member, i) => <MemberRow key={i} {...member} />);
 }
 
 export default TableBody;

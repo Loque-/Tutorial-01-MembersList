@@ -1,3 +1,4 @@
+import React from "react";
 import { styled } from "@stitches/react";
 import { tableSize } from "styles";
 import BungieIcon from "components/atoms/icons/bungie";
@@ -50,23 +51,27 @@ const BungieLink = styled("a", {
     padding: "10px"
 });
 
+function formatDate(dateString) {
+    const formattedDate = new Date(dateString).toLocaleString("en-GB");
+    return formattedDate;
+}
+
 function MemberComponent({
-    imgURL,
+    image,
     name,
     joinDate,
     lastOnline,
     bungieId,
-    bungieMemberType
+    bungieMemberType,
+    ...props
 }) {
     return (
         <Member>
             <Inner>
-                <Image src={imgURL} alt="member" />
+                <Image src={image} alt="member" />
                 <Name>{name}</Name>
-                <JoinDate>{joinDate}</JoinDate>
-                <LastOnlineDate>
-                    {new Date(lastOnline).toLocaleString()}
-                </LastOnlineDate>
+                <JoinDate>{formatDate(joinDate)}</JoinDate>
+                <LastOnlineDate>{formatDate(lastOnline)}</LastOnlineDate>
                 <Links>
                     <BungieLink
                         target="_blank"
@@ -81,4 +86,4 @@ function MemberComponent({
     );
 }
 
-export default MemberComponent;
+export default React.memo(MemberComponent);

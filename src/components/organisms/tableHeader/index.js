@@ -18,6 +18,7 @@ const ColumnTitle = styled("div", {
     padding: "0px 5px",
     height: "38px",
     transition: "color .25s, background-color .25s, box-shadow .25s",
+    cursor: "pointer",
     "&:hover": {
         backgroundColor: "rgba(255, 255, 255,.2)"
     }
